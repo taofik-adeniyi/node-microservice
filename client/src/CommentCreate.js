@@ -5,6 +5,11 @@ import axios from 'axios'
 
     const [content, setContent] = useState('')
 
+    const handleChange = (e) => {
+        setContent(e.target.value)
+        console.log('the cont', content);
+    }
+
     const onSubmit = async (event) => {
         event.preventDefault()
 
@@ -19,7 +24,7 @@ import axios from 'axios'
             <form onSubmit={onSubmit}>
                 <div className="form-group">
                     <label>New Comment</label>
-                    <input value={content} onChange={e => setContent(e.target.value)} className="form-control" />
+                    <input value={content} onChange={handleChange} className="form-control" />
                 </div>
                     <button className="btn btn-primary">Submit</button>
             </form>
